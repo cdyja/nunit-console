@@ -39,7 +39,8 @@ namespace NUnit.Engine.Api.Tests
             _testEngine.InternalTraceLevel = InternalTraceLevel.Off;
         }
 
-        [TestCase(typeof(ISettings))]
+        [TestCase(typeof(ITestFilterService))]
+        [TestCase(typeof(IExtensionService))]
         [TestCase(typeof(IDriverService))]
         public void CanAccessService(Type serviceType)
         {
