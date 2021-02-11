@@ -23,11 +23,17 @@
 
 namespace NUnit.Engine.Services.Tests.Fakes
 {
+    /// <summary>
+    /// FakeService is a base class for Services used in testing.
+    /// It may be used directly or as a base for a fake with
+    /// some sort of simulated behavior.
+    /// </summary>
     public class FakeService : IService
     {
         IServiceLocator IService.ServiceContext { get; set; }
 
-        private ServiceStatus _status;
+        protected ServiceStatus _status;
+
         ServiceStatus IService.Status
         {
             get { return _status; }
